@@ -19,9 +19,9 @@ int main() {
 	//count_sort(arr, M);
 	//radix_sort (arr);
 	merge_sort(arr, size);
-	/*for(int i = 0; i < SIZE; ++i)
-		cout << arr[i] << '\t';
-	cout << '\n';*/
+	for(int i = 0; i < SIZE; ++i)
+		std::cout << arr[i] << '\t';
+	std::cout << '\n';
 	return 0;
 }
 
@@ -96,7 +96,10 @@ void radix_sort (int arr[]) { // поразрядная сортировка, п
 	delete[] a1;
 }
 
-void merge_sort(int arr[], int size) { // Сортировка слиянием, универсальная сортировка O(n*log2(n))
+void merge_sort(int arr[], int size) { // Сортировка СЛИЯНИЕМ, универсальная сортировка O(n*log2(n))
+    if(size <= 1) {
+		return;
+	}
 	using namespace std;
 	int middle = size / 2;
 	int* left_arr = arr;
